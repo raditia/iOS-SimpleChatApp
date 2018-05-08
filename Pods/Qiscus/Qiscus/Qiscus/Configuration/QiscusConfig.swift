@@ -13,7 +13,7 @@ open class QiscusConfig: NSObject {
     static let sharedInstance = QiscusConfig()
     
     open var commentPerLoad:Int = 10
-    open var dbSchemaVersion:UInt64 = 75
+    open var dbSchemaVersion:UInt64 = 76
     
     open var UPLOAD_URL = ""
     
@@ -47,7 +47,7 @@ open class QiscusConfig: NSObject {
             if Qiscus.client.baseUrl != "" {
                 return "\(Qiscus.client.baseUrl)/api/v\(self.API_VERSION)/mobile"
             }else{
-                return "\(Qiscus.client.appId).qiscus.com/api/v\(self.API_VERSION)/mobile"
+                return "api.qiscus.com/api/v\(self.API_VERSION)/mobile"
             }
         }
     }
@@ -56,6 +56,7 @@ open class QiscusConfig: NSObject {
             var headers:[String:String] = [
                 "User-Agent" : "QiscusSDKIos/v\(Qiscus.versionNumber)",
                 "QISCUS_SDK_APP_ID" : Qiscus.client.appId,
+                "QISCUS_SDK_VERSION" : "IOS_\(Qiscus.versionNumber)",
                 ]
             if Qiscus.client.token != "" {
                 headers["QISCUS_SDK_TOKEN"] = Qiscus.client.token
@@ -135,6 +136,9 @@ open class QiscusConfig: NSObject {
     }
     internal class var ROOM_UNIQUEID_URL:String{
         return "\(QiscusConfig.sharedInstance.BASE_API_URL)/get_or_create_room_with_unique_id"
+    }
+    internal class var ALL_UNREAD_COUNT: String {
+        return "\(QiscusConfig.sharedInstance.BASE_API_URL)/total_unread_count"
     }
     open class var LINK_METADATA_URL:String{
         let config = QiscusConfig.sharedInstance

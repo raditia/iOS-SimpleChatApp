@@ -312,6 +312,7 @@ public class QComment:Object {
         get {
             let date = Date(timeIntervalSince1970: self.createdAt)
             let timeFormatter = DateFormatter()
+            timeFormatter.timeZone = NSTimeZone.local
             timeFormatter.dateFormat = "h:mm a"
             let timeString = timeFormatter.string(from: date)
             
@@ -323,6 +324,7 @@ public class QComment:Object {
         var recalculate = false
         
         func recalculateSize()->CGSize{
+            if self.isInvalidated {return CGSize()}
             let textView = UITextView()
             textView.font = Qiscus.style.chatFont
             if self.type == .carousel {
@@ -407,6 +409,7 @@ public class QComment:Object {
         }
         let realm = try! Realm(configuration: Qiscus.dbConfiguration)
         realm.refresh()
+        if self.isInvalidated {return CGSize()}
         if Float(Qiscus.style.chatFont.pointSize) != self.textFontSize || Qiscus.style.chatFont.familyName != self.textFontName{
             if self.type != .card && self.type != .carousel {
                 recalculate = true
@@ -555,6 +558,22 @@ public class QComment:Object {
         }
         return nil
     }
+    
+    internal class func comments(searchQuery: String) -> [QComment] {
+        if Thread.isMainThread {
+            let realm = try! Realm(configuration: Qiscus.dbConfiguration)
+            realm.refresh()
+            
+            let comments = realm.objects(QComment.self).filter({ (comment) -> Bool in
+                return comment.text.lowercased().contains(searchQuery.lowercased())
+            })
+            
+            return Array(comments)
+        }
+        
+        return [QComment]()
+    }
+    
     public class func comment(withId id:Int)->QComment?{
         if Thread.isMainThread {
             let realm = try! Realm(configuration: Qiscus.dbConfiguration)
@@ -961,6 +980,7 @@ public class QComment:Object {
         if self.isRead {return}
         QiscusDBThread.async {
             if let comment = QComment.threadSaveComment(withUniqueId: uniqueId){
+                if comment.isInvalidated {return}
                 let realm = try! Realm(configuration: Qiscus.dbConfiguration)
                 realm.refresh()
                 try! realm.write {

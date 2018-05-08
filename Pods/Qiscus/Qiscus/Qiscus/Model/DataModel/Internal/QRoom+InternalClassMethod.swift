@@ -98,8 +98,10 @@ internal extension QRoom {
             let distinctId = json["distinct_id"].stringValue
             let chatTypeRaw = json["chat_type"].stringValue
             let roomName = json["room_name"].stringValue
+            let roomTotalParticipant = json["room_total_participants"].intValue
             let roomAvatar = json["avatar_url"].stringValue
             let unread = json["unread_count"].intValue
+            let isPublicChannel = json["is_public_channel"].boolValue
             
             var chatType = QRoomType.single
             if chatTypeRaw != "single" {
@@ -212,6 +214,7 @@ internal extension QRoom {
                 savedRoom.update(avatarURL: roomAvatar)
                 savedRoom.update(name: roomName)
                 savedRoom.updateUnreadCommentCount(count: unread)
+                savedRoom.updateTotalParticipant(count: roomTotalParticipant)
                 if option != "" && option != "<null>" && savedRoom.data != option{
                     try! realm.write {
                         savedRoom.data = option
@@ -233,6 +236,8 @@ internal extension QRoom {
                 }
                 room.uniqueId = roomUniqueId
                 room.typeRaw = chatType.rawValue
+                room.roomTotalParticipant = roomTotalParticipant
+                room.isPublicChannel = isPublicChannel
                 room.distinctId = distinctId
                 room.storedName = roomName
                 room.storedAvatarURL = roomAvatar

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Qiscus
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		
+		// Setup Qiscus
+		Qiscus.setup(withAppId: "simple-ch-cedp4oaggh8",
+					 userEmail: "gustiraditia@gmail.com",
+					 userKey: "raditia",
+					 username: "Raditia Madya",
+					 avatarURL: "https://favim.com/orig/201106/15/animal-beautiful-cat-cute-djur-Favim.com-76976.jpg",
+					 delegate: nil,
+					 secureURl: true)
+		
+		// Setup window
+		let viewController = ChatViewController()
+		let navigationController = UINavigationController(rootViewController: viewController)
+		
+		self.window = UIWindow(frame: UIScreen.main.bounds)
+		window?.rootViewController = navigationController
+		window?.makeKeyAndVisible()
+		
 		return true
 	}
 

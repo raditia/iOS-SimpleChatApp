@@ -25,7 +25,7 @@ var QiscusDBThread = DispatchQueue(label: "com.qiscus.db", attributes: .concurre
     static let sharedInstance = Qiscus()
 
     
-    static let qiscusVersionNumber:String = "2.8.6"
+    static let qiscusVersionNumber:String = "2.8.13"
     public static var client : QiscusClient {
         get { return QiscusClient.shared }
     }
@@ -61,6 +61,8 @@ var QiscusDBThread = DispatchQueue(label: "com.qiscus.db", attributes: .concurre
      ```
      */
     public static var chatDelegate:QiscusChatDelegate?
+    
+    public static var disableLocalization: Bool = false
     
     /**
      Setup maximum size when you send attachment inside chat view, example send video/image from galery. By default maximum size is unlimited.
@@ -328,7 +330,6 @@ var QiscusDBThread = DispatchQueue(label: "com.qiscus.db", attributes: .concurre
      - parameter appId: Qiscus App ID, please register or login in http://qiscus.com to find your App ID
     */
     @objc public class func setAppId(appId:String){
-        Qiscus.setBaseURL(withURL: "https://\(appId).qiscus.com")
         Qiscus.client.appId = appId
         Qiscus.client.userData.set(appId, forKey: "qiscus_appId")
     }
@@ -352,9 +353,10 @@ var QiscusDBThread = DispatchQueue(label: "com.qiscus.db", attributes: .concurre
             requestProtocol = "http"
         }
         let email = userEmail.lowercased()
-        let baseUrl = "\(requestProtocol)://\(appId).qiscus.com"
+        let baseUrl = "\(requestProtocol)://api.qiscus.com"
         
         if delegate != nil {
+            
             Qiscus.shared.delegate = delegate
         }
         var needLogin = false
@@ -447,7 +449,10 @@ var QiscusDBThread = DispatchQueue(label: "com.qiscus.db", attributes: .concurre
      */
     @objc public class func chatView(withRoomUniqueId uniqueId:String, readOnly:Bool = false, title:String = "", avatarUrl:String = "", subtitle:String = "", withMessage:String? = nil)->QiscusChatVC{
         if let room = QRoom.room(withUniqueId: uniqueId){
-            return Qiscus.chatView(withRoomId: room.id, readOnly: readOnly, title: title, subtitle: subtitle, withMessage: withMessage)
+            let chatVC = Qiscus.chatView(withRoomId: room.id, readOnly: readOnly, title: title, subtitle: subtitle, withMessage: withMessage)
+            chatVC.chatRoomUniqueId = uniqueId
+            chatVC.isPublicChannel = true
+            return chatVC
         }else{
             if !Qiscus.sharedInstance.connected {
                 Qiscus.setupReachability()
@@ -460,6 +465,7 @@ var QiscusDBThread = DispatchQueue(label: "com.qiscus.db", attributes: .concurre
             chatVC.chatRoomUniqueId = uniqueId
             chatVC.chatAvatarURL = avatarUrl
             chatVC.chatTitle = title
+            chatVC.isPublicChannel = true
             
             if chatVC.isPresence {
                 chatVC.goBack()
@@ -1005,5 +1011,28 @@ var QiscusDBThread = DispatchQueue(label: "com.qiscus.db", attributes: .concurre
                 room.subscribeRealtimeStatus()
             }
         }}
+    }
+    
+    
+    /// search local message comment
+    ///
+    /// - Parameter searchQuery: query to search
+    /// - Returns: array of QComment obj
+    public class func searchComment(searchQuery: String) -> [QComment] {
+        return QComment.comments(searchQuery: searchQuery)
+    }
+    
+    
+    /// get all unread count
+    ///
+    /// - Parameters:
+    ///   - onSuccess: success completion with unread count value
+    ///   - onError: error completion with error message
+    public class func getAllUnreadCount(onSuccess: @escaping ((_ unread: Int) -> Void), onError: @escaping ((_ error: String) -> Void)) {
+        QChatService.defaultService.getAllUnreadCount(onSuccess: { (unread) in
+            onSuccess(unread)
+        }) { (error) in
+            onError(error)
+        }
     }
 }
