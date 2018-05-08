@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (4.5.1)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - CocoaAsyncSocket (7.6.2)
+  - CocoaMQTT (1.1.1):
+    - CocoaAsyncSocket (~> 7.6.1)
+    - SwiftyTimer (~> 2.0.0)
+  - ImageViewer (5.0.0)
+  - Qiscus (2.8.6):
+    - Alamofire (~> 4.5.1)
+    - AlamofireImage (~> 3.3.0)
+    - CocoaMQTT (= 1.1.1)
+    - ImageViewer (= 5.0.0)
+    - RealmSwift (~> 3.0.2)
+    - SwiftyJSON (~> 3.1.4)
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RealmSwift (3.0.2):
+    - Realm (= 3.0.2)
+  - SwiftyJSON (3.1.4)
+  - SwiftyTimer (2.0.0)
+
+DEPENDENCIES:
+  - Qiscus
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  CocoaAsyncSocket: 3541e024f48c54b251638ef72d51dd42808de932
+  CocoaMQTT: 3a01a51d534e0419b950d32236d4da389f074de8
+  ImageViewer: 3def6e39c6979ce3e9d001c78eec0d8b895f2f73
+  Qiscus: 953cd73be1bcf9f93829638ffbb1b2b6afdf91ab
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
+
+PODFILE CHECKSUM: 0dbe0427eb7f27b337f904f88127e23937eebe75
+
+COCOAPODS: 1.4.0
