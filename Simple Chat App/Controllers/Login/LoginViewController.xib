@@ -13,9 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Simple_Chat_App" customModuleProvider="target">
             <connections>
                 <outlet property="displayNameField" destination="XWc-wj-4YS" id="f0Z-u8-VlJ"/>
+                <outlet property="emailField" destination="u9Y-O5-Hq3" id="yJt-NO-PJk"/>
                 <outlet property="loginButton" destination="OlN-yD-eVl" id="GT7-mw-vH7"/>
                 <outlet property="passwordField" destination="KJ5-VT-4kz" id="Rag-Kt-08p"/>
-                <outlet property="usernameField" destination="u9Y-O5-Hq3" id="yJt-NO-PJk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,13 +30,13 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BFO-DE-Vlk" userLabel="Username Stack View">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="66"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZU-YK-LO0">
-                                    <rect key="frame" x="0.0" y="0.0" width="72" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZU-YK-LO0">
+                                    <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="18"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g raditia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9Y-O5-Hq3">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g radit@mail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9Y-O5-Hq3">
                                     <rect key="frame" x="0.0" y="26" width="343" height="40"/>
                                     <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -120,6 +120,9 @@
                     <state key="normal" title="LOGIN">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="Kny-lH-eJw"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.15686274509803921" green="0.74901960784313726" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		381423EE20A1F5F8008A6F99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381423EC20A1F5F8008A6F99 /* LoginViewController.swift */; };
 		381423EF20A1F5F8008A6F99 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381423ED20A1F5F8008A6F99 /* LoginViewController.xib */; };
+		3865CEED20A949FD000B76C3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3865CEEC20A949FD000B76C3 /* Helper.swift */; };
 		38E5FD1520A1A13B00403E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E5FD1420A1A13B00403E58 /* AppDelegate.swift */; };
 		38E5FD1C20A1A13D00403E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E5FD1B20A1A13D00403E58 /* Assets.xcassets */; };
 		38E5FD1F20A1A13D00403E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E5FD1D20A1A13D00403E58 /* LaunchScreen.storyboard */; };
@@ -34,6 +35,7 @@
 		251AE04BBDADE76FE61E12A2 /* Pods-Simple Chat App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Chat App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Chat App/Pods-Simple Chat App.debug.xcconfig"; sourceTree = "<group>"; };
 		381423EC20A1F5F8008A6F99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		381423ED20A1F5F8008A6F99 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		3865CEEC20A949FD000B76C3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		38E5FD1120A1A13B00403E58 /* Simple Chat App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Chat App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E5FD1420A1A13B00403E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38E5FD1B20A1A13D00403E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		3865CEEB20A949D3000B76C3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3865CEEC20A949FD000B76C3 /* Helper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		38E5FD0820A1A13B00403E58 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 			children = (
 				38E5FD3520A1B09900403E58 /* Controllers */,
 				38E5FD3420A1B07B00403E58 /* Support Files */,
+				3865CEEB20A949D3000B76C3 /* Utils */,
 				38E5FD1420A1A13B00403E58 /* AppDelegate.swift */,
 				38E5FD2020A1A13D00403E58 /* Info.plist */,
 				38E5FD1D20A1A13D00403E58 /* LaunchScreen.storyboard */,
@@ -397,6 +408,7 @@
 				381423EE20A1F5F8008A6F99 /* LoginViewController.swift in Sources */,
 				38E5FD3920A1BD7A00403E58 /* ChatViewController.swift in Sources */,
 				38E5FD1520A1A13B00403E58 /* AppDelegate.swift in Sources */,
+				3865CEED20A949FD000B76C3 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

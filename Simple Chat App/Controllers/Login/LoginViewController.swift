@@ -11,7 +11,7 @@ import Qiscus
 
 class LoginViewController: UIViewController {
 
-	@IBOutlet weak var usernameField: UITextField!
+	@IBOutlet weak var emailField: UITextField!
 	@IBOutlet weak var displayNameField: UITextField!
 	@IBOutlet weak var passwordField: UITextField!
 	@IBOutlet weak var loginButton: UIButton!
@@ -24,6 +24,10 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
 		navigationController?.navigationBar.isHidden = true
     }
+	
+	@IBAction func loginButtonTapped(_ sender: Any) {
+		self.login()
+	}
 	
 }
 
@@ -43,16 +47,16 @@ extension LoginViewController {
 		
 		// MARK: - Delegation text field
 		self.displayNameField.returnKeyType = .continue
-		self.usernameField.returnKeyType = .continue
+		self.emailField.returnKeyType = .continue
 		self.passwordField.returnKeyType = .done
 		
 		self.displayNameField.delegate = self
-		self.usernameField.delegate = self
+		self.emailField.delegate = self
 		self.passwordField.delegate = self
 		
 		// MARK: - Custom view & components
 		let cornerRadius: CGFloat = 10.0
-		self.usernameField.layer.cornerRadius = cornerRadius
+		self.emailField.layer.cornerRadius = cornerRadius
 		self.displayNameField.layer.cornerRadius = cornerRadius
 		self.passwordField.layer.cornerRadius = cornerRadius
 		self.loginButton.layer.cornerRadius = cornerRadius
@@ -65,7 +69,7 @@ extension LoginViewController {
 	func actionOfReturnKey(_ tag: Int) {
 		switch tag {
 		case 0:
-			self.usernameField.becomeFirstResponder()
+			self.emailField.becomeFirstResponder()
 			break
 		case 1:
 			self.passwordField.becomeFirstResponder()
@@ -80,7 +84,7 @@ extension LoginViewController {
 	
 	func login() {
 		
-		guard let username = self.usernameField.text else {
+		guard let email = self.emailField.text else {
 			return
 		}
 		guard let displayName = self.displayNameField.text else {
@@ -89,7 +93,19 @@ extension LoginViewController {
 		guard let password = self.passwordField.text else {
 			return
 		}
-		
+
+		Qiscus.setup(withAppId: Helper.APP_ID,
+					 userEmail: email,
+					 userKey: password,
+					 username: displayName,
+					 avatarURL: "",
+					 secureURl: true)
+
+
+
+		let view = Qiscus.chatView(withUsers: [email])
+		self.navigationController?.pushViewController(view, animated: true)
 		
 	}
+	
 }

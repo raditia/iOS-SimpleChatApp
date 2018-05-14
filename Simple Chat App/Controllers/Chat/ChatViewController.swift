@@ -12,22 +12,28 @@ import Qiscus
 class ChatViewController: UIViewController {
 
 	@IBOutlet weak var targetField: UITextField!
+	@IBOutlet weak var chatButton: UIButton!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
-		navigationController?.navigationBar.isTranslucent = false
-		
-		let button = UIButton(frame: CGRect(x: 130, y:150, width:100, height:30))
-		button.backgroundColor = UIColor.green
-		button.setTitle("Start Chat", for: .normal)
-		button.addTarget(self, action: #selector(ChatViewController.startChat), for: .touchUpInside)
-		self.view.addSubview(button)
+		let cornerRadius: CGFloat = 10.0
+		self.chatButton.layer.cornerRadius = cornerRadius
     }
-
-	@objc func startChat(){
+	
+	override func viewWillAppear(_ animated: Bool) {
+		navigationController?.navigationBar.isTranslucent = false
+		navigationController?.navigationBar.isHidden = true
+	}
+	
+	@IBAction func chatButtonTapped(_ sender: Any) {
+		self.startChat()
+	}
+	
+	func startChat(){
 		let email = targetField.text!
 		let view = Qiscus.chatView(withUsers: [email])
+		navigationController?.navigationBar.isHidden = false
 		self.navigationController?.pushViewController(view, animated: true)
 	}
     
