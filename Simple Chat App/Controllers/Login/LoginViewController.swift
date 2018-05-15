@@ -25,6 +25,10 @@ class LoginViewController: UIViewController {
 		navigationController?.navigationBar.isHidden = true
     }
 	
+	override func viewWillAppear(_ animated: Bool) {
+		navigationController?.navigationBar.isHidden = true
+	}
+	
 	@IBAction func loginButtonTapped(_ sender: Any) {
 		self.login()
 	}
@@ -94,18 +98,44 @@ extension LoginViewController {
 			return
 		}
 
-		Qiscus.setup(withAppId: Helper.APP_ID,
-					 userEmail: email,
-					 userKey: password,
-					 username: displayName,
-					 avatarURL: "",
-					 secureURl: true)
+		if !(email.isEmpty) {
+			
+			Qiscus.setup(withAppId: Helper.APP_ID,
+						 userEmail: email,
+						 userKey: password,
+						 username: displayName,
+						 avatarURL: "",
+						 secureURl: true)
+		}
+		else {
+			if Qiscus.isLoggedIn { Qiscus.clear() }
+			
+//			self.delegate?.needLoggedIn("")
+		}
 
 
-
-		let view = Qiscus.chatView(withUsers: [email])
+//		let view = Qiscus.chatView(withUsers: ["gustiraditia@gmail.com"])
+		let view = ChatViewController()
+		navigationController?.navigationBar.isHidden = false
 		self.navigationController?.pushViewController(view, animated: true)
+		
+//		Qiscus.roomList(withLimit: 100, page: 1, onSuccess: { (rooms, totalRoom, currentPage, limit) in
+//
+//			print("room list: \(rooms)")
+//		}) { (error) in
+//			// resulting error in string
+//		}
 		
 	}
 	
+}
+
+extension LoginViewController : QiscusConfigDelegate{
+	func qiscusConnected() {
+		print("connect") // your connected callback
+	}
+	
+	func qiscusFailToConnect(_ withMessage: String) {
+		print(withMessage) //your error auth callback
+	}
 }

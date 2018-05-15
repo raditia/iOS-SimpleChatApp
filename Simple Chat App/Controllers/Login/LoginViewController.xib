@@ -94,7 +94,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" smartDashesType="no" smartQuotesType="no" textContentType="email"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartQuotesType="no" textContentType="password"/>
                                 </textField>
                             </subviews>
                             <constraints>

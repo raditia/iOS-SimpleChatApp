@@ -18,13 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
 		// Setup Qiscus
-		Qiscus.setup(withAppId: "simple-ch-cedp4oaggh8",
-					 userEmail: "gustiraditia@gmail.com",
-					 userKey: "09d8c8b5576be93a777b61b5ae647a5f",
-					 username: "Gusti Raditia",
-					 avatarURL: "https://favim.com/orig/201106/15/animal-beautiful-cat-cute-djur-Favim.com-76976.jpg",
-					 delegate: nil,
-					 secureURl: true)
+//		Qiscus.setup(withAppId: "simple-ch-cedp4oaggh8",
+//					 userEmail: "gustiraditia@gmail.com",
+//					 userKey: "09d8c8b5576be93a777b61b5ae647a5f",
+//					 username: "Gusti Raditia",
+//					 avatarURL: "https://favim.com/orig/201106/15/animal-beautiful-cat-cute-djur-Favim.com-76976.jpg",
+//					 delegate: nil,
+//					 secureURl: true)
 //
 //		Qiscus.setup(withAppId: "simple-ch-cedp4oaggh8",
 //					 userEmail: "raditiamadya@gmail.com",
