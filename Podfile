@@ -7,6 +7,7 @@ target 'Simple Chat App' do
 
   # Pods for Simple Chat App
   pod 'Qiscus'
+  pod 'Moya', '~> 11.0'
 
   target 'Simple Chat AppTests' do
     inherit! :search_paths

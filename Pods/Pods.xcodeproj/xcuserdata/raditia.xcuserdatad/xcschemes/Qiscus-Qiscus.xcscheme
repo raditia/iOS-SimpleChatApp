@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A2F29E54617E3A62BE3E3BA22AAB48DD"
+               BlueprintIdentifier = "93172E771E558B57B8DC27A180F05436"
                BuildableName = "Qiscus.bundle"
                BlueprintName = "Qiscus-Qiscus"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A2F29E54617E3A62BE3E3BA22AAB48DD"
+            BlueprintIdentifier = "93172E771E558B57B8DC27A180F05436"
             BuildableName = "Qiscus.bundle"
             BlueprintName = "Qiscus-Qiscus"
             ReferencedContainer = "container:Pods.xcodeproj">

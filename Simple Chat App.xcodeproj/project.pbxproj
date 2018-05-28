@@ -9,7 +9,12 @@
 /* Begin PBXBuildFile section */
 		381423EE20A1F5F8008A6F99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381423EC20A1F5F8008A6F99 /* LoginViewController.swift */; };
 		381423EF20A1F5F8008A6F99 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381423ED20A1F5F8008A6F99 /* LoginViewController.xib */; };
+		381A561E20B98722006020C0 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A561D20B98722006020C0 /* UserAPI.swift */; };
+		381A562220B98C6C006020C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A562120B98C6C006020C0 /* User.swift */; };
+		381A562620B9CE34006020C0 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A562420B9CE34006020C0 /* ContactViewController.swift */; };
+		381A562720B9CE34006020C0 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381A562520B9CE34006020C0 /* ContactViewController.xib */; };
 		3865CEED20A949FD000B76C3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3865CEEC20A949FD000B76C3 /* Helper.swift */; };
+		388EC83020BC2B7600788AED /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EC82F20BC2B7600788AED /* UIImageView.swift */; };
 		38E5FD1520A1A13B00403E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E5FD1420A1A13B00403E58 /* AppDelegate.swift */; };
 		38E5FD1C20A1A13D00403E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E5FD1B20A1A13D00403E58 /* Assets.xcassets */; };
 		38E5FD1F20A1A13D00403E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E5FD1D20A1A13D00403E58 /* LaunchScreen.storyboard */; };
@@ -35,7 +40,12 @@
 		251AE04BBDADE76FE61E12A2 /* Pods-Simple Chat App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple Chat App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Simple Chat App/Pods-Simple Chat App.debug.xcconfig"; sourceTree = "<group>"; };
 		381423EC20A1F5F8008A6F99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		381423ED20A1F5F8008A6F99 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		381A561D20B98722006020C0 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		381A562120B98C6C006020C0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		381A562420B9CE34006020C0 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		381A562520B9CE34006020C0 /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 		3865CEEC20A949FD000B76C3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		388EC82F20BC2B7600788AED /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		38E5FD1120A1A13B00403E58 /* Simple Chat App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Chat App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E5FD1420A1A13B00403E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38E5FD1B20A1A13D00403E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,12 +91,53 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		381A561C20B98710006020C0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				381A561D20B98722006020C0 /* UserAPI.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		381A561F20B98C49006020C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				381A562020B98C53006020C0 /* User */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		381A562020B98C53006020C0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				381A562120B98C6C006020C0 /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		381A562320B9CE04006020C0 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				381A562420B9CE34006020C0 /* ContactViewController.swift */,
+				381A562520B9CE34006020C0 /* ContactViewController.xib */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
 		3865CEEB20A949D3000B76C3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				3865CEEC20A949FD000B76C3 /* Helper.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		388EC82E20BC2B5E00788AED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				388EC82F20BC2B7600788AED /* UIImageView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		38E5FD0820A1A13B00403E58 = {
@@ -112,12 +163,14 @@
 		38E5FD1320A1A13B00403E58 /* Simple Chat App */ = {
 			isa = PBXGroup;
 			children = (
+				381A561F20B98C49006020C0 /* Models */,
+				381A561C20B98710006020C0 /* Services */,
 				38E5FD3520A1B09900403E58 /* Controllers */,
-				38E5FD3420A1B07B00403E58 /* Support Files */,
 				3865CEEB20A949D3000B76C3 /* Utils */,
+				388EC82E20BC2B5E00788AED /* Extensions */,
+				38E5FD3420A1B07B00403E58 /* Support Files */,
 				38E5FD1420A1A13B00403E58 /* AppDelegate.swift */,
 				38E5FD2020A1A13D00403E58 /* Info.plist */,
-				38E5FD1D20A1A13D00403E58 /* LaunchScreen.storyboard */,
 			);
 			path = "Simple Chat App";
 			sourceTree = "<group>";
@@ -135,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				38E5FD1B20A1A13D00403E58 /* Assets.xcassets */,
+				38E5FD1D20A1A13D00403E58 /* LaunchScreen.storyboard */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -142,6 +196,7 @@
 		38E5FD3520A1B09900403E58 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				381A562320B9CE04006020C0 /* Contact */,
 				381423EB20A1F5E3008A6F99 /* Login */,
 				38E5FD3620A1BD6C00403E58 /* Chat */,
 			);
@@ -265,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				381423EF20A1F5F8008A6F99 /* LoginViewController.xib in Resources */,
+				381A562720B9CE34006020C0 /* ContactViewController.xib in Resources */,
 				38E5FD1F20A1A13D00403E58 /* LaunchScreen.storyboard in Resources */,
 				38E5FD1C20A1A13D00403E58 /* Assets.xcassets in Resources */,
 				38E5FD3A20A1BD7A00403E58 /* ChatViewController.xib in Resources */,
@@ -293,9 +349,11 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaMQTT/CocoaMQTT.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Qiscus/Qiscus.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
 			);
@@ -306,9 +364,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaMQTT.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Qiscus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
 			);
@@ -405,9 +465,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388EC83020BC2B7600788AED /* UIImageView.swift in Sources */,
 				381423EE20A1F5F8008A6F99 /* LoginViewController.swift in Sources */,
+				381A562620B9CE34006020C0 /* ContactViewController.swift in Sources */,
 				38E5FD3920A1BD7A00403E58 /* ChatViewController.swift in Sources */,
+				381A562220B98C6C006020C0 /* User.swift in Sources */,
 				38E5FD1520A1A13B00403E58 /* AppDelegate.swift in Sources */,
+				381A561E20B98722006020C0 /* UserAPI.swift in Sources */,
 				3865CEED20A949FD000B76C3 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

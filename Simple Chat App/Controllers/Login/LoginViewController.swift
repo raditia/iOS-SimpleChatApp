@@ -115,9 +115,10 @@ extension LoginViewController {
 
 
 //		let view = Qiscus.chatView(withUsers: ["gustiraditia@gmail.com"])
-		let view = ChatViewController()
-		navigationController?.navigationBar.isHidden = false
-		self.navigationController?.pushViewController(view, animated: true)
+		let view = ContactViewController()
+		let navigationController = UINavigationController(rootViewController: view)
+		
+		self.present(navigationController, animated: true, completion: nil)
 		
 //		Qiscus.roomList(withLimit: 100, page: 1, onSuccess: { (rooms, totalRoom, currentPage, limit) in
 //

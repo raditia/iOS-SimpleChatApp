@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9C274AC816016638F08C956ADC448DCE"
+               BlueprintIdentifier = "DA206DF38C31CE55BED3F326748329AC"
                BlueprintName = "Qiscus"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Qiscus.framework">
