@@ -115,7 +115,7 @@ extension LoginViewController {
 
 
 //		let view = Qiscus.chatView(withUsers: ["gustiraditia@gmail.com"])
-		let view = ContactViewController()
+		let view = TabBarController()
 		let navigationController = UINavigationController(rootViewController: view)
 		
 		self.present(navigationController, animated: true, completion: nil)

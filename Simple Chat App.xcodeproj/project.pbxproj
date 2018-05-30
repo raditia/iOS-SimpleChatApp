@@ -15,6 +15,11 @@
 		381A562720B9CE34006020C0 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381A562520B9CE34006020C0 /* ContactViewController.xib */; };
 		3865CEED20A949FD000B76C3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3865CEEC20A949FD000B76C3 /* Helper.swift */; };
 		388EC83020BC2B7600788AED /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EC82F20BC2B7600788AED /* UIImageView.swift */; };
+		388EC83520BC561400788AED /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EC83320BC561400788AED /* RoomListViewController.swift */; };
+		388EC83620BC561400788AED /* RoomListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388EC83420BC561400788AED /* RoomListViewController.xib */; };
+		388EC83920BC56A700788AED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EC83820BC56A700788AED /* TabBarController.swift */; };
+		388EC83C20BC580400788AED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EC83A20BC580400788AED /* SettingsViewController.swift */; };
+		388EC83D20BC580400788AED /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388EC83B20BC580400788AED /* SettingsViewController.xib */; };
 		38E5FD1520A1A13B00403E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E5FD1420A1A13B00403E58 /* AppDelegate.swift */; };
 		38E5FD1C20A1A13D00403E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E5FD1B20A1A13D00403E58 /* Assets.xcassets */; };
 		38E5FD1F20A1A13D00403E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E5FD1D20A1A13D00403E58 /* LaunchScreen.storyboard */; };
@@ -46,6 +51,11 @@
 		381A562520B9CE34006020C0 /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 		3865CEEC20A949FD000B76C3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		388EC82F20BC2B7600788AED /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		388EC83320BC561400788AED /* RoomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
+		388EC83420BC561400788AED /* RoomListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomListViewController.xib; sourceTree = "<group>"; };
+		388EC83820BC56A700788AED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		388EC83A20BC580400788AED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		388EC83B20BC580400788AED /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		38E5FD1120A1A13B00403E58 /* Simple Chat App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Chat App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E5FD1420A1A13B00403E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38E5FD1B20A1A13D00403E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +150,32 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		388EC83120BC55EC00788AED /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				388EC83320BC561400788AED /* RoomListViewController.swift */,
+				388EC83420BC561400788AED /* RoomListViewController.xib */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		388EC83220BC55F200788AED /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				388EC83A20BC580400788AED /* SettingsViewController.swift */,
+				388EC83B20BC580400788AED /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		388EC83720BC568800788AED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				388EC83820BC56A700788AED /* TabBarController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		38E5FD0820A1A13B00403E58 = {
 			isa = PBXGroup;
 			children = (
@@ -163,9 +199,10 @@
 		38E5FD1320A1A13B00403E58 /* Simple Chat App */ = {
 			isa = PBXGroup;
 			children = (
+				388EC83720BC568800788AED /* Views */,
 				381A561F20B98C49006020C0 /* Models */,
-				381A561C20B98710006020C0 /* Services */,
 				38E5FD3520A1B09900403E58 /* Controllers */,
+				381A561C20B98710006020C0 /* Services */,
 				3865CEEB20A949D3000B76C3 /* Utils */,
 				388EC82E20BC2B5E00788AED /* Extensions */,
 				38E5FD3420A1B07B00403E58 /* Support Files */,
@@ -196,6 +233,8 @@
 		38E5FD3520A1B09900403E58 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				388EC83220BC55F200788AED /* Settings */,
+				388EC83120BC55EC00788AED /* Room */,
 				381A562320B9CE04006020C0 /* Contact */,
 				381423EB20A1F5E3008A6F99 /* Login */,
 				38E5FD3620A1BD6C00403E58 /* Chat */,
@@ -324,6 +363,8 @@
 				38E5FD1F20A1A13D00403E58 /* LaunchScreen.storyboard in Resources */,
 				38E5FD1C20A1A13D00403E58 /* Assets.xcassets in Resources */,
 				38E5FD3A20A1BD7A00403E58 /* ChatViewController.xib in Resources */,
+				388EC83D20BC580400788AED /* SettingsViewController.xib in Resources */,
+				388EC83620BC561400788AED /* RoomListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,8 +506,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388EC83520BC561400788AED /* RoomListViewController.swift in Sources */,
 				388EC83020BC2B7600788AED /* UIImageView.swift in Sources */,
+				388EC83C20BC580400788AED /* SettingsViewController.swift in Sources */,
 				381423EE20A1F5F8008A6F99 /* LoginViewController.swift in Sources */,
+				388EC83920BC56A700788AED /* TabBarController.swift in Sources */,
 				381A562620B9CE34006020C0 /* ContactViewController.swift in Sources */,
 				38E5FD3920A1BD7A00403E58 /* ChatViewController.swift in Sources */,
 				381A562220B98C6C006020C0 /* User.swift in Sources */,

@@ -29,8 +29,8 @@ struct Meta: Decodable {
 struct User: Decodable {
 	
 	let avatar_url: String
-//	let created_at: Date
-//	let updated_at: Date
+	let created_at: String
+	let updated_at: String
 	let email: String
 	let id: Int
 	let name: String

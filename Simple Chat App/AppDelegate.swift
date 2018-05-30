@@ -35,12 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //					 secureURl: true)
 		
 		// Setup window
-		let viewController = LoginViewController()
-		let navigationController = UINavigationController(rootViewController: viewController)
-		
 		self.window = UIWindow(frame: UIScreen.main.bounds)
-		window?.rootViewController = navigationController
-		window?.makeKeyAndVisible()
+		if let window = self.window {
+			window.rootViewController = TabBarController()
+			window.makeKeyAndVisible()
+		}
 		
 		return true
 	}
