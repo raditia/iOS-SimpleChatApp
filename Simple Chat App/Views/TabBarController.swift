@@ -31,6 +31,8 @@ class TabBarController: UITabBarController {
 		
 		viewControllers = controller
 		viewControllers = controller.map { UINavigationController(rootViewController: $0) }
+		
+		UITabBar.appearance().tintColor = UIColor(rgb: 0x1A7F45)
     }
 
 }

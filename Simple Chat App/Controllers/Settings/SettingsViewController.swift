@@ -13,8 +13,12 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Settings"
+		let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+		
+		navigationItem.title = "Settings"
+		navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
 		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x1A7F45)
 		
     }
 

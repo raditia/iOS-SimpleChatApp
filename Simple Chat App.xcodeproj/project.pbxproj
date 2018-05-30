@@ -20,6 +20,8 @@
 		388EC83920BC56A700788AED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EC83820BC56A700788AED /* TabBarController.swift */; };
 		388EC83C20BC580400788AED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EC83A20BC580400788AED /* SettingsViewController.swift */; };
 		388EC83D20BC580400788AED /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388EC83B20BC580400788AED /* SettingsViewController.xib */; };
+		38B7BC2F20BF197300972DF8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B7BC2E20BF197300972DF8 /* UIColor.swift */; };
+		38B7BC3420BF1E4A00972DF8 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B7BC3320BF1E4A00972DF8 /* Chat.swift */; };
 		38E5FD1520A1A13B00403E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E5FD1420A1A13B00403E58 /* AppDelegate.swift */; };
 		38E5FD1C20A1A13D00403E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E5FD1B20A1A13D00403E58 /* Assets.xcassets */; };
 		38E5FD1F20A1A13D00403E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E5FD1D20A1A13D00403E58 /* LaunchScreen.storyboard */; };
@@ -56,6 +58,8 @@
 		388EC83820BC56A700788AED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		388EC83A20BC580400788AED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		388EC83B20BC580400788AED /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		38B7BC2E20BF197300972DF8 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		38B7BC3320BF1E4A00972DF8 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		38E5FD1120A1A13B00403E58 /* Simple Chat App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Chat App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E5FD1420A1A13B00403E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38E5FD1B20A1A13D00403E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		381A561F20B98C49006020C0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				38B7BC3020BF1C6C00972DF8 /* Chat */,
 				381A562020B98C53006020C0 /* User */,
 			);
 			path = Models;
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				388EC82F20BC2B7600788AED /* UIImageView.swift */,
+				38B7BC2E20BF197300972DF8 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,6 +180,14 @@
 				388EC83820BC56A700788AED /* TabBarController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		38B7BC3020BF1C6C00972DF8 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				38B7BC3320BF1E4A00972DF8 /* Chat.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		38E5FD0820A1A13B00403E58 = {
@@ -506,7 +520,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B7BC3420BF1E4A00972DF8 /* Chat.swift in Sources */,
 				388EC83520BC561400788AED /* RoomListViewController.swift in Sources */,
+				38B7BC2F20BF197300972DF8 /* UIColor.swift in Sources */,
 				388EC83020BC2B7600788AED /* UIImageView.swift in Sources */,
 				388EC83C20BC580400788AED /* SettingsViewController.swift in Sources */,
 				381423EE20A1F5F8008A6F99 /* LoginViewController.swift in Sources */,

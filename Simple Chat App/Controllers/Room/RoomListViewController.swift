@@ -98,12 +98,22 @@ extension RoomListViewController {
 	
 	func setNavigationBar() {
 		
+		let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+		
 		navigationItem.title = "Room List"
+		navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
 		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x1A7F45)
 		navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "create_new"),
 															style: .plain,
 															target: self,
 															action: #selector(createNewMessage))
+		navigationItem.rightBarButtonItem!.tintColor = UIColor.white
+	}
+	
+	func fetchRoomList() {
+		
+		
 	}
 	
 	@objc func createNewMessage() {

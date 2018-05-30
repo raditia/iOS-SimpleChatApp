@@ -66,8 +66,6 @@ class ContactViewController: UITableViewController, UISearchResultsUpdating {
 		cell.textLabel?.text = contact.name
 		cell.detailTextLabel?.text = contact.email
 		cell.imageView?.downloadedFrom(link: contact.avatar_url)
-		cell.imageView?.image.
-		
 		
 		
         return cell
@@ -122,8 +120,12 @@ class ContactViewController: UITableViewController, UISearchResultsUpdating {
 	
 	private func setNavigationBar() {
 		
+		let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+		
 		navigationItem.title = "Contact List"
+		navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
 		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x1A7F45)
 	}
 	
 	func updateSearchResults(for searchController: UISearchController) {
