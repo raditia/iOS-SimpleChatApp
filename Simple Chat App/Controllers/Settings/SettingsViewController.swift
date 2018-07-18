@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Qiscus
 
 class SettingsViewController: UIViewController {
 
-    override func viewDidLoad() {
+	@IBOutlet weak var logoutButton: UIButton!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
 		let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
@@ -20,6 +23,8 @@ class SettingsViewController: UIViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x1A7F45)
 		
+		logoutButton.layer.cornerRadius = 10.0
+		
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +32,13 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	@IBAction func logoutButtonTapped(_ sender: Any) {
+		
+		if Qiscus.isLoggedIn == true {
+			
+			Qiscus.clear()
+			present(LoginViewController(), animated: true, completion: nil)
+		}
+	}
 
 }
